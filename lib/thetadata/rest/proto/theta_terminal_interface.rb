@@ -1,0 +1,68 @@
+require "protocol/grpc/interface"
+
+module ThetaData
+  module Proto
+    class ThetaTerminalInterface < Protocol::GRPC::Interface
+      rpc :GetStockListSymbols, ::Endpoints::StockListSymbolsRequest, stream(::Endpoints::ResponseData)
+      rpc :GetStockListDates, ::Endpoints::StockListDatesRequest, stream(::Endpoints::ResponseData)
+      rpc :GetStockSnapshotOhlc, ::Endpoints::StockSnapshotOhlcRequest, stream(::Endpoints::ResponseData)
+      rpc :GetStockSnapshotTrade, ::Endpoints::StockSnapshotTradeRequest, stream(::Endpoints::ResponseData)
+      rpc :GetStockSnapshotQuote, ::Endpoints::StockSnapshotQuoteRequest, stream(::Endpoints::ResponseData)
+      rpc :GetStockHistoryEod, ::Endpoints::StockHistoryEodRequest, stream(::Endpoints::ResponseData)
+      rpc :GetStockHistoryOhlc, ::Endpoints::StockHistoryOhlcRequest, stream(::Endpoints::ResponseData)
+      rpc :GetStockHistoryTrade, ::Endpoints::StockHistoryTradeRequest, stream(::Endpoints::ResponseData)
+      rpc :GetStockHistoryQuote, ::Endpoints::StockHistoryQuoteRequest, stream(::Endpoints::ResponseData)
+      rpc :GetStockHistoryTradeQuote, ::Endpoints::StockHistoryTradeQuoteRequest, stream(::Endpoints::ResponseData)
+      rpc :GetStockAtTimeTrade, ::Endpoints::StockAtTimeTradeRequest, stream(::Endpoints::ResponseData)
+      rpc :GetStockAtTimeQuote, ::Endpoints::StockAtTimeQuoteRequest, stream(::Endpoints::ResponseData)
+
+      rpc :GetOptionListSymbols, ::Endpoints::OptionListSymbolsRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionListDates, ::Endpoints::OptionListDatesRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionListExpirations, ::Endpoints::OptionListExpirationsRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionListStrikes, ::Endpoints::OptionListStrikesRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionListContracts, ::Endpoints::OptionListContractsRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionSnapshotOhlc, ::Endpoints::OptionSnapshotOhlcRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionSnapshotTrade, ::Endpoints::OptionSnapshotTradeRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionSnapshotQuote, ::Endpoints::OptionSnapshotQuoteRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionSnapshotOpenInterest, ::Endpoints::OptionSnapshotOpenInterestRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryEod, ::Endpoints::OptionHistoryEodRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryOhlc, ::Endpoints::OptionHistoryOhlcRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryTrade, ::Endpoints::OptionHistoryTradeRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryQuote, ::Endpoints::OptionHistoryQuoteRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryTradeQuote, ::Endpoints::OptionHistoryTradeQuoteRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryOpenInterest, ::Endpoints::OptionHistoryOpenInterestRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionAtTimeTrade, ::Endpoints::OptionAtTimeTradeRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionAtTimeQuote, ::Endpoints::OptionAtTimeQuoteRequest, stream(::Endpoints::ResponseData)
+
+      rpc :GetOptionSnapshotGreeksImpliedVolatility, ::Endpoints::OptionSnapshotGreeksImpliedVolatilityRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionSnapshotGreeksAll, ::Endpoints::OptionSnapshotGreeksAllRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionSnapshotGreeksFirstOrder, ::Endpoints::OptionSnapshotGreeksFirstOrderRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionSnapshotGreeksSecondOrder, ::Endpoints::OptionSnapshotGreeksSecondOrderRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionSnapshotGreeksThirdOrder, ::Endpoints::OptionSnapshotGreeksThirdOrderRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryGreeksEod, ::Endpoints::OptionHistoryGreeksEodRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryGreeksAll, ::Endpoints::OptionHistoryGreeksAllRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryGreeksFirstOrder, ::Endpoints::OptionHistoryGreeksFirstOrderRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryGreeksSecondOrder, ::Endpoints::OptionHistoryGreeksSecondOrderRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryGreeksThirdOrder, ::Endpoints::OptionHistoryGreeksThirdOrderRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryGreeksImpliedVolatility, ::Endpoints::OptionHistoryGreeksImpliedVolatilityRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryTradeGreeksAll, ::Endpoints::OptionHistoryTradeGreeksAllRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryTradeGreeksFirstOrder, ::Endpoints::OptionHistoryTradeGreeksFirstOrderRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryTradeGreeksSecondOrder, ::Endpoints::OptionHistoryTradeGreeksSecondOrderRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryTradeGreeksThirdOrder, ::Endpoints::OptionHistoryTradeGreeksThirdOrderRequest, stream(::Endpoints::ResponseData)
+      rpc :GetOptionHistoryTradeGreeksImpliedVolatility, ::Endpoints::OptionHistoryTradeGreeksImpliedVolatilityRequest, stream(::Endpoints::ResponseData)
+
+      rpc :GetIndexListSymbols, ::Endpoints::IndexListSymbolsRequest, stream(::Endpoints::ResponseData)
+      rpc :GetIndexListDates, ::Endpoints::IndexListDatesRequest, stream(::Endpoints::ResponseData)
+      rpc :GetIndexSnapshotOhlc, ::Endpoints::IndexSnapshotOhlcRequest, stream(::Endpoints::ResponseData)
+      rpc :GetIndexSnapshotPrice, ::Endpoints::IndexSnapshotPriceRequest, stream(::Endpoints::ResponseData)
+      rpc :GetIndexHistoryEod, ::Endpoints::IndexHistoryEodRequest, stream(::Endpoints::ResponseData)
+      rpc :GetIndexHistoryOhlc, ::Endpoints::IndexHistoryOhlcRequest, stream(::Endpoints::ResponseData)
+      rpc :GetIndexHistoryPrice, ::Endpoints::IndexHistoryPriceRequest, stream(::Endpoints::ResponseData)
+      rpc :GetIndexAtTimePrice, ::Endpoints::IndexAtTimePriceRequest, stream(::Endpoints::ResponseData)
+
+      rpc :GetCalendarOpenToday, ::Endpoints::CalendarOpenTodayRequest, stream(::Endpoints::ResponseData)
+      rpc :GetCalendarOnDate, ::Endpoints::CalendarOnDateRequest, stream(::Endpoints::ResponseData)
+      rpc :GetCalendarYear, ::Endpoints::CalendarYearRequest, stream(::Endpoints::ResponseData)
+    end
+  end
+end
